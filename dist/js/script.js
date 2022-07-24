@@ -271,7 +271,50 @@ new MenuCard("img/tabs/elite.jpg", "elite", 'Меню “Премиум”', `В
   в ресторан!`, 21, '.menu .container', 'menu__item').render();
 new MenuCard("img/tabs/post.jpg", "post", 'Меню "Постное"', `Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие
   продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное
-  количество белков за счет тофу и импортных вегетарианских стейков.`, 16, '.menu .container', 'menu__item').render();
+  количество белков за счет тофу и импортных вегетарианских стейков.`, 16, '.menu .container', 'menu__item').render(); // Forms
+
+const forms = document.querySelectorAll('form');
+const message = {
+  loading: 'Loading',
+  success: 'Success',
+  failure: 'Something went wrong...'
+};
+forms.forEach(item => {
+  postData(item);
+});
+
+function postData(form) {
+  form.addEventListener('submit', e => {
+    e.preventDefault(); // отключение перезагрузки страницы
+
+    const statusMessage = document.createElement('div');
+    statusMessage.classList.add('status');
+    statusMessage.textContent = message.loading;
+    form.append(statusMessage);
+    const request = new XMLHttpRequest();
+    request.open('POST', 'server.php');
+    request.setRequestHeader('Content-type', 'application/json');
+    const formData = new FormData(form);
+    const object = {};
+    formData.forEach(function (value, key) {
+      object[key] = value;
+    });
+    const json = JSON.stringify(object);
+    request.send(json);
+    request.addEventListener('load', () => {
+      if (request.status === 200) {
+        console.log(request.response);
+        statusMessage.textContent = message.success;
+        form.reset();
+        setTimeout(() => {
+          statusMessage.remove();
+        }, 2000);
+      } else {
+        statusMessage.textContent = message.failure;
+      }
+    });
+  });
+}
 
 /***/ })
 
