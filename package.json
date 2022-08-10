@@ -1,12 +1,11 @@
 {
   "name": "food",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Rostyslav Mysiuha",
   "license": "ISC",
   "browserslist": [
     "last 2 chrome versions",
@@ -23,11 +22,21 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.1.1",
+    "json-server": "^0.17.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-stream": "^5.2.1"
   },
   "dependencies": {
     "core-js": "^3.24.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RostyslavWeb/Food.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RostyslavWeb/Food/issues"
+  },
+  "homepage": "https://github.com/RostyslavWeb/Food#readme",
+  "description": ""
 }

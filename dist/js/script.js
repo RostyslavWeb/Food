@@ -2269,17 +2269,18 @@ window.addEventListener('DOMContentLoaded', () => {
       prevModalDialog.classList.remove('hide');
       closeModal();
     }, 4000);
-  }
+  } // fetch('https://jsonplaceholder.typicode.com/posts', {
+  //   method: "POST",
+  //   body: JSON.stringify({ name: 'Alex' }),
+  //   headers: {
+  //     'Content-type': 'application/json'
+  //   }
+  // })
+  //   .then(response => response.json())
+  //   .then(json => console.log(json));
 
-  fetch('https://jsonplaceholder.typicode.com/posts', {
-    method: "POST",
-    body: JSON.stringify({
-      name: 'Alex'
-    }),
-    headers: {
-      'Content-type': 'application/json'
-    }
-  }).then(response => response.json()).then(json => console.log(json));
+
+  fetch('http://localhost:3000/menu').then(data => data.json()).then(res => console.log(res));
 });
 
 /***/ })
