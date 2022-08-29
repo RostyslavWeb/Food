@@ -12,4 +12,4 @@ Modules
 + calories calculator
 
 ## Preview:
-![Preview](https://github.com/RostyslavWeb/Food/blob/master/index-food.jpg)
+![Preview](https://github.com/RostyslavWeb/Food/blob/master/food-index.jpg)
