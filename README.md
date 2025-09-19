@@ -1,8 +1,7 @@
 # Food project
 
-**VanillaJS project**
+## Features:
 
-Modules
 + product cards creation
 + forms
 + modal
